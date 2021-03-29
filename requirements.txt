@@ -1,0 +1,6 @@
+tensorflow-cpu
+pillow==6.2.0
+numpy
+streamlit==0.62.0
+opencv-python-headless==4.2.0.32
+keras
