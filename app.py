@@ -13,23 +13,19 @@ print(file_path)
 # Load your trained model
 model = keras.models.load_model(file_path)        # Necessary
 
-# You can also use pretrained model from Keras
-# Check https://keras.io/applications/
-# from keras.applications.resnet50 import ResNet50
-# model = ResNet50(weights='imagenet')
-# model.save(MODEL_PATH)
-print('Model loaded. Check http://127.0.0.1:5000/')
-st.write(
-         # Image Classifier
-         )
-st.write("This is a simple image classification web app to predict rock-paper-scissor hand sign")
 
+print('Model loaded. Check http://127.0.0.1:5000/')
+st.markdown("<h1 style='text-align: center;margin-top: -80px; color: blue;'>Automatic cataract detection</h1>", unsafe_allow_html=True)
+st.write("This is a image classification web app to predict whether cataract from fundus images")
 file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
 if file is None:
     st.text("You haven't uploaded an image file")
 else:
+    with open("style.css") as f:
+        st.markdown('<style>{}</style>'.format(f.read()), unsafe_allow_html=True)
     image = Image.open(file)
-    st.image(image, width = 300)
+    st.image(image, width = 250)
+    
     image_size = 224
     try:
         image = cv2.cvtColor(np.array(image),cv2.IMREAD_COLOR)
@@ -41,4 +37,9 @@ else:
     
     # Make prediction
     result = model.predict_classes(vals)
-    st.text(result[0])
+
+col1, col2, col3 = st.beta_columns(3)
+if col2.button('Predict'):
+    st.write(result[0][0])
+
+st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
