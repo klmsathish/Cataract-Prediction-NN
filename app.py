@@ -7,7 +7,7 @@ import os
 
 from keras.models import load_model
 basepath = os.path.dirname(__file__)
-MODEL_PATH = 'medical_trial_model.h5'
+MODEL_PATH = 'model_final.hdf5'
 file_path = os.path.join(basepath, MODEL_PATH)
 print(file_path)
 # Load your trained model
