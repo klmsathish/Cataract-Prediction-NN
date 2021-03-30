@@ -2,13 +2,10 @@ import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import cv2
 import random
-import pickle
 from tqdm import tqdm
-import matplotlib.pyplot as plt
-from tensorflow.keras.preprocessing.image import ImageDataGenerator
 import os
 import tensorflow as tf
-
+from sklearn.model_selection import train_test_split
 df = pd.read_csv("Data/data.csv")
 
 def has_cataract(text):
@@ -56,7 +53,7 @@ len(dataset)
 x = np.array([i[0] for i in dataset]).reshape(-1,image_size,image_size,3)
 y = np.array([i[1] for i in dataset])
 
-from sklearn.model_selection import train_test_split
+
 x_train,x_test,y_train,y_test = train_test_split(x,y,test_size=0.2)
 
 from tensorflow.keras.applications.vgg19 import VGG19
