@@ -4,5 +4,5 @@ numpy
 streamlit==0.62.0
 opencv-python-headless==4.2.0.32
 keras
-h5py==2.10.0
+h5py
 
