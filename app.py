@@ -9,6 +9,7 @@ basepath = os.path.dirname(__file__)
 MODEL_PATH = 'model_final.hdf5'
 file_path = os.path.join(basepath, MODEL_PATH)
 print(file_path)
+
 # Load your trained model
 model = tf.keras.models.load_model(file_path)        # Necessary
 
