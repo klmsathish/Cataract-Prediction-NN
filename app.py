@@ -3,11 +3,15 @@ import streamlit as st
 import tensorflow as tf
 from PIL import Image, ImageOps
 import cv2
-from keras.models import load_model
-MODEL_PATH = 'medical_trial_model.h5'
+import os 
 
+from keras.models import load_model
+basepath = os.path.dirname(__file__)
+MODEL_PATH = 'medical_trial_model.h5'
+file_path = os.path.join(basepath, MODEL_PATH)
+print(file_path)
 # Load your trained model
-model = load_model(MODEL_PATH)        # Necessary
+model = load_model(file_path)        # Necessary
 print('Model loaded. Start serving...')
 
 # You can also use pretrained model from Keras
