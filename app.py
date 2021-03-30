@@ -4,6 +4,7 @@ import tensorflow as tf
 from PIL import Image, ImageOps
 import cv2
 import os 
+import keras
 
 basepath = os.path.dirname(__file__)
 MODEL_PATH = 'model_final.hdf5'
@@ -11,7 +12,7 @@ file_path = os.path.join(basepath, MODEL_PATH)
 print(file_path)
 
 # Load your trained model
-model = tf.keras.models.load_model(file_path)        # Necessary
+model = keras.models.load_model(file_path)        # Necessary
 
 # You can also use pretrained model from Keras
 # Check https://keras.io/applications/
@@ -41,4 +42,4 @@ else:
     
     # Make prediction
     result = model.predict_classes(vals)
-    st.text(result)
+    st.text(result[0])
