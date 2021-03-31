@@ -4,14 +4,14 @@ from PIL import Image, ImageOps
 import cv2
 import os 
 import keras
-
+import tensorflow as tf
 basepath = os.path.dirname(__file__)
 MODEL_PATH = 'model_final.hdf5'
 file_path = os.path.join(basepath, MODEL_PATH)
 print(file_path)
 
 # Load your trained model
-model = keras.models.load_model(file_path)        # Necessary
+model = tf.keras.models.load_model(file_path)        # Necessary
 
 
 print('Model loaded. Check http://127.0.0.1:5000/')
