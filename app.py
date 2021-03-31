@@ -39,7 +39,10 @@ else:
     result = model.predict_classes(vals)
 
 col1, col2, col3 = st.beta_columns(3)
-if col2.button('Predict'):
-    st.write(result[0][0])
-
-st.markdown('<style>h1{color: red;}</style>', unsafe_allow_html=True)
+col1, col2, col3 , col4, col5 = st.beta_columns(5)
+with col3 :
+    if st.button('Predict',key = 1):
+        if result[0][0] == 1 :
+            st.error("OMG! You have cataract")
+        if result[0][0] == 0 :
+            st.success("YAYYY !! You are very fine")
