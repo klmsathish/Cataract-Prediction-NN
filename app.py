@@ -42,6 +42,6 @@ with col3 :
     button = st.button('Predict',key = 1)
 if button :
     if result[0][0] == 1 :
-        st.error("You have cataract")
+        st.error("You have chances of having a cataract! Take care of your eyes 😣")
     if result[0][0] == 0 :
-        st.success("You are fine")
+        st.success("You are perfectly alright! Have a good day 😁")

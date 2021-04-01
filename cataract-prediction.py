@@ -7,7 +7,6 @@ import os
 import tensorflow as tf
 from sklearn.model_selection import train_test_split
 df = pd.read_csv("Data/data.csv")
-
 def has_cataract(text):
     if "cataract" in text:
         return 1
