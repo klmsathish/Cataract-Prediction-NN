@@ -5,3 +5,4 @@ keras
 streamlit==0.69.0
 opencv-python-headless==4.2.0.32
 h5py==2.10.0
+bokeh
