@@ -13,8 +13,6 @@ print(file_path)
 # Load your trained model
 model = tf.keras.models.load_model(file_path)        # Necessary
 
-
-print('Model loaded. Check http://127.0.0.1:5000/')
 st.markdown("<h1 style='text-align: center;margin-top: -80px; color: blue;'>Automatic cataract detection</h1>", unsafe_allow_html=True)
 st.write("This is a image classification web app to predict whether cataract from fundus images")
 file = st.file_uploader("Please upload an image file", type=["jpg", "png"])
